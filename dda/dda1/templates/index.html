@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>VEN U BOOK</title>
+</head>
+<body>
+
+<div>
+<ul class="nav1">
+
+  <li><a >Home</a></li>
+  <li><a >Book</a></li>
+  <li><a >Contact</a></li>
+  <li><a >News</a></li>
+
+</ul>
+</div>
+
+<div class="logbox">
+    <div id="form1">
+
+ <form action="/super/" method="post">
+    {% csrf_token %}
+     <div class="form-group">
+     {{ form.name }}
+
+     </div>
+     <div class="form-group" id="button1">
+    <input type="submit" value="Book now" class="btn btn-primary">
+     </div>
+ </form>
+
+    </div>
+</div>
+
+
+</body>
+</html>
