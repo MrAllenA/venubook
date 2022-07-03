@@ -1,0 +1,120 @@
+body {
+ background-image: url('/static/images/bg.jpg');
+ }
+
+.nav1
+{list-style-type:none;
+ margin-top:20px;
+ padding:0;
+  width: 170px;
+  height : 750px;
+  border : 0px dashed #d7429b;
+  border-radius: 0px 40px 30px 5px;
+  background-color: white;
+  display: block;
+box-shadow: rgba(219, 70, 159, 0.30) 7px -4px 16px  10px, rgba(58, 153, 242, 0.40) 6px 2px 10px 0px;}
+
+
+
+.nav1 li a
+{
+  display:block;
+
+  width: inherit;
+  color: #DB469F !important;
+  padding: 60px 40px;
+  text-decoration: none;
+  font-family:Arial;
+  font-size: 25px;
+  border-radius: 0px 40px 30px 5px;
+}
+.nav1 li a:hover {
+  background-color: #d7429b;
+  color : white !important;
+
+
+
+}
+
+.logbox {
+
+position: absolute;
+
+    top:100px;
+    bottom: 0;
+    left: 70px;
+    right: 0;
+
+    margin: auto;
+
+width : 600px;
+height : 400px;
+background-color:white;
+border-color : 0px solid black;
+border-radius: 40px 8px 40px 8px;
+box-shadow: rgba(219, 70, 159, 0.50) 10px 3px 15px,rgba(58, 153, 242, 0.50) 0px 10px 20px ;
+}
+.logbox #form1 {
+  position: relative;
+   top:150px;
+    bottom: 0;
+    left: 150px;
+    right: 0;
+
+    margin: auto;
+}
+
+#button1{
+position:relative;
+
+left:110px;
+top:30px;
+
+}
+.logbox #fpass {
+position:relative;
+ top:10px;
+
+}
+ .logbox .circle1 {
+position: absolute;
+left: 35%;
+  bottom:300px;
+  width: 200px;
+
+    height: 200px;
+    background-color: white;
+    border-radius:50%;
+    box-shadow: rgb(102, 153, 255) 0px -10px 30px 0px;
+}
+.logbox .circle1 #logimg{
+  position:inherit;
+  margin:auto;
+  top: -50px;
+  width:320px;
+  height:320px;
+  right: -55px;
+  bottom:-45px;
+
+}
+.logbox .round1 {
+position:relative;
+ border-radius: 70px 0px 70px 70px;
+
+  padding: 20px;
+  width: 120px;
+  height: 70px;
+  left: 480px;
+  top: 158px;
+  box-shadow: -4px -0px 30px -20px black;
+}
+
+.logbox .reg  a {
+position :relative;
+color : #DB469F;
+
+font-family: "Monaco", monospace;
+font-size: 15px;
+ left: 485px;
+  top: 110px;
+}

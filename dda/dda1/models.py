@@ -7,3 +7,10 @@ from django.db import models
 class Persons(models.Model):
     name = models.CharField(max_length=100)
     pasn = models.CharField(max_length=100, default=0000)
+
+
+class reg(models.Model):
+    name = models.CharField(max_length=100)
+    pasn1 = models.CharField(max_length=100, default=0000)
+    pasn2 = models.CharField(max_length=100, default=0000)
+    email = models.EmailField(max_length=254)

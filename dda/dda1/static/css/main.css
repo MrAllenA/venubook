@@ -1,3 +1,6 @@
+body {
+ background-image: url('/static/images/bg.jpg');
+ }
 
 .nav1
 {list-style-type:none;
@@ -9,9 +12,14 @@
   border-radius: 0px 40px 30px 5px;
   background-color: white;
   display: block;
-box-shadow: rgba(219, 70, 159, 0.30) 7px -4px 16px 0px, rgba(58, 153, 242, 0.40) 6px 2px 10px 0px;}
+box-shadow: rgba(219, 70, 159, 0.30) 7px -4px 16px  10px, rgba(58, 153, 242, 0.40) 6px 2px 10px 0px;}
 
+.logbox .inval label#inval1 {
+position:absolute;
+color:red;
+left: 50px;
 
+}
 
 .nav1 li a
 {
@@ -37,17 +45,17 @@ box-shadow: rgba(219, 70, 159, 0.30) 7px -4px 16px 0px, rgba(58, 153, 242, 0.40)
 
 position: absolute;
 
-    top:0;
+    top:100px;
     bottom: 0;
-    left: 60px;
+    left: 70px;
     right: 0;
 
     margin: auto;
-margin:auto;
 
 width : 600px;
 height : 400px;
-border : 0px solid black;
+background-color:white;
+border-color : 0px solid black;
 border-radius: 40px 8px 40px 8px;
 box-shadow: rgba(219, 70, 159, 0.50) 10px 3px 15px,rgba(58, 153, 242, 0.50) 0px 10px 20px ;
 }
@@ -63,7 +71,55 @@ box-shadow: rgba(219, 70, 159, 0.50) 10px 3px 15px,rgba(58, 153, 242, 0.50) 0px 
 
 #button1{
 position:relative;
-left:50px;
+
+left:110px;
 top:30px;
 
+}
+.logbox #fpass {
+position:relative;
+ top:10px;
+
+}
+ .logbox .circle1 {
+position: absolute;
+left: 35%;
+  bottom:300px;
+  width: 200px;
+
+    height: 200px;
+    background-color: white;
+    border-radius:50%;
+    box-shadow: rgb(102, 153, 255) 0px -10px 30px 0px;
+}
+.logbox .circle1 #logimg{
+  position:inherit;
+  margin:auto;
+  top: -50px;
+  width:320px;
+  height:320px;
+  right: -55px;
+  bottom:-45px;
+
+}
+.logbox .round1 {
+position:relative;
+ border-radius: 70px 0px 70px 70px;
+
+  padding: 20px;
+  width: 120px;
+  height: 70px;
+  left: 480px;
+  top: 158px;
+  box-shadow: -4px -0px 30px -20px black;
+}
+
+.logbox .reg  a {
+position :relative;
+color : #DB469F;
+
+font-family: "Monaco", monospace;
+font-size: 15px;
+ left: 485px;
+  top: 110px;
 }
