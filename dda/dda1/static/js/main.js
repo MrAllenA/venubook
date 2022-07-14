@@ -2,6 +2,7 @@ var flag1 = document.getElementById('hd1').value;
 if (!flag1.localeCompare("reject")) {
 
 document.getElementById('sh1').style.boxShadow = "0px -10px 30px 0px red";
+document.getElementById('inval1').style.visibility="visible";
 }
  $.ajax({
             type: "GET",

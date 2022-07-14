@@ -17,8 +17,9 @@ box-shadow: rgba(219, 70, 159, 0.30) 7px -4px 16px  10px, rgba(58, 153, 242, 0.4
 .logbox .inval label#inval1 {
 position:absolute;
 color:red;
-left: 50px;
-
+left: 190px;
+top: 350px;
+ visibility: hidden;
 }
 
 .nav1 li a

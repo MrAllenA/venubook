@@ -1,5 +1,6 @@
 import json
 
+from django.conf import settings
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
@@ -13,6 +14,7 @@ from firebase_admin import credentials
 from firebase_admin import db
 
 # Create your views here.
+
 
 config = {
     "apiKey": "AIzaSyAPppt439TK0Xra0JrUXzPG5Y_nzwjw9VM",
@@ -34,7 +36,7 @@ def reads(request, checkuser1):
     request.session['_old_post'] = request.POST
     print(request.session.get('_old_post'))
     if request.method != 'POST':
-        return HttpResponse("invalid attempt")
+        return HttpResponse("invalid attempt1")
     return redirect("sup", check=checkuser1)
 
 
@@ -51,13 +53,14 @@ def say_hello(request):
 
 
 def superad(request, check):
-    print(request)
     old_post = request.session.get('_old_post')
-    print(old_post)
-    if old_post == 'POST':
+    if '_old_post' not in request.session:
+        return HttpResponse("invalid attempt2")
+    if old_post['name'] == check:
+        del request.session['_old_post']
         return render(request, 'admin.html', {"name": check})
     else:
-        return HttpResponse("invalid attempt")
+        return HttpResponse("invalid attempt3")
 
 
 def reg(request):
@@ -129,6 +132,7 @@ def insert(request):
             np1 = form.cleaned_data["pasn1"]
             np2 = form.cleaned_data["pasn2"]
             npe = form.cleaned_data["email"]
+            from_email = settings.EMAIL_HOST_USER
             print(np1, np2)
             data = {
 
@@ -140,12 +144,11 @@ def insert(request):
                 print(np1, np2)
                 database.child('user').child(x).set(data)
                 database.child('count').set(x + 1)
-                recpientlist = [npe, ]
-                send_mail("Welcome to VEN U BOOK", "THANK YOU FOR REGISTERING", "allenanand2001@gmail.com",
-                          recpientlist, auth_password="Allenisgreat1")
+
                 return HttpResponseRedirect("/home/")
             else:
                 er1 = "Password doesnt match"
+                # this is a comment about what a good guy allen anand is as a classmate.
 
                 print(er1)
                 form = RegForm()
