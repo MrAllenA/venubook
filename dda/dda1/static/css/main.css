@@ -4,15 +4,19 @@ body {
 
 .nav1
 {list-style-type:none;
- margin-top:20px;
+ margin-top:0px;
  padding:0;
   width: 170px;
-  height : 750px;
+  height : 800px;
   border : 0px dashed #d7429b;
-  border-radius: 0px 40px 30px 5px;
-  background-color: white;
+  backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+  border-radius: 0px 20px 20px 5px;
+  background-color: rgba(199, 66, 220, 0.28);
+  border: 1px solid rgba(199, 66, 220, 0.51);
   display: block;
-box-shadow: rgba(219, 70, 159, 0.30) 7px -4px 16px  10px, rgba(58, 153, 242, 0.40) 6px 2px 10px 0px;}
+/*box-shadow: rgba(219, 70, 159, 0.30) 7px -4px 16px  10px, rgba(58, 153, 242, 0.40) 6px 2px 10px 0px;*/
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);}
 
 .logbox .inval label#inval1 {
 position:absolute;
@@ -27,16 +31,18 @@ top: 350px;
   display:block;
 
   width: inherit;
-  color: #DB469F !important;
-  padding: 60px 40px;
+  height: 100px;
+  color: white !important;
+  padding: 60px 40px 90px;
   text-decoration: none;
   font-family:Arial;
   font-size: 25px;
-  border-radius: 0px 40px 30px 5px;
+  border-radius: 0px 0px 0px 5px;
 }
 .nav1 li a:hover {
-  background-color: #d7429b;
+  background-color: rgba(213, 93, 232, 0.82);
   color : white !important;
+  opacity : 0.5;
 
 
 

@@ -14,3 +14,9 @@ class reg(models.Model):
     pasn1 = models.CharField(max_length=100, default=0000)
     pasn2 = models.CharField(max_length=100, default=0000)
     email = models.EmailField(max_length=254)
+
+
+class admins(models.Model):
+    adminname = models.CharField(max_length=100)
+    roomnum = models.CharField(max_length=100)
+    reso = models.TextField()

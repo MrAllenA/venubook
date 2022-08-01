@@ -1,8 +1,8 @@
 from django import forms
-from django.forms import ModelForm, TextInput, EmailInput, PasswordInput
+from django.forms import ModelForm, TextInput, EmailInput, PasswordInput, Textarea
 from django.template.defaulttags import comment
 
-from .models import Persons, reg
+from .models import Persons, reg, admins
 
 
 class NameForm(forms.ModelForm):
@@ -54,4 +54,39 @@ class RegForm(forms.ModelForm):
                 'style': 'max-width: 300px;',
                 'placeholder': 'example@gmail.com'
             }),
+        }
+
+
+class admins(forms.ModelForm):
+    class Meta:
+        model = admins
+        fields = ('adminname', 'roomnum', 'reso')
+        labels = {
+            "adminname": "",
+            "roomnum": "",
+            "reso": "",
+        }
+        widgets = {
+            'adminname': TextInput(attrs={
+                'class': "form__input",
+
+                'style': 'max-width: 300px;',
+
+                'placeholder': 'Username',
+                'readonly': 'readonly'
+            }),
+            'roomnum': TextInput(attrs={
+                'class': "form__input",
+                'style': 'max-width: 300px;',
+
+                'placeholder': 'Room No'
+            }),
+            'reso': Textarea(attrs={
+                'class': "form__input",
+
+                'placeholder': 'resources',
+                'rows': 10,
+                'cols': 30,
+            }),
+
         }

@@ -1,0 +1,179 @@
+
+html{
+    margin:0;
+    padding: 0;}
+
+body{
+margin:0;
+ padding: 0;
+background :#1A1A1D!important;
+
+}
+.head1{
+position:absolute;
+width :100%;
+height: 100px;
+background : rgba(237, 57, 111, 1);
+margin:0px;
+padding:0px;
+
+}
+.ucontcut{
+position :absolute;
+top: 15px;
+left : 40px;
+width:190px;
+height: 70px;
+background: rgba(26, 26, 29, 1);
+
+border-radius: 50px;
+border : 1px solid rgba(237, 57, 111, 0.25);
+
+}
+.ucont{
+position :absolute;
+top: 25px;
+left : 50px;
+width:170px;
+height: 50px;
+background: rgba(237, 57, 111, 1);
+
+border-radius: 50px;
+border : 1px solid rgba(237, 57, 111, 0.25);
+box-shadow: rgba(237, 57, 111, 0.4) 0px 5px 10px 0px;
+}
+.ucont #uuserid {
+   position:inherit;
+  top: 15px;
+  left: 25px;
+  padding:0px;
+  margin:0;
+  font-size:15px;
+  color: white;
+ font-family: "Monaco", monospace;
+}
+#container{
+width:100%;
+height: auto;
+position:absolute;
+top:100px;
+display:grid;
+grid-area: card1;
+ grid-template-columns: 1fr 1fr 1fr ;
+ grid-template-rows: 1fr 1fr 1fr;
+place-items:  center;
+
+}
+.card1{
+
+
+  margin: 25px;
+  padding:0px;
+
+  width: 220px;
+  height: 250px;
+  background:  rgba(26, 26, 29, 1);
+  border-radius: 20px;
+  box-shadow: rgba(237, 57, 111, 1) 0px 0px 50px -25px;
+
+
+}
+
+.card1 .text1 {
+display: flex;
+
+justify-content: center;
+margin:0;
+   position: inherit;
+   color: white;
+   padding:0px;
+ font-family: "Monaco", monospace;
+ font-size:50px;
+  left: 70px;
+  top: 90px;
+}
+
+.card1 .bttn1 button{
+ position: relative;
+  width : 180px;
+  height: 60px;
+  top : 100px;
+  left: 20px;
+  border-radius :10px;
+  font-size : 40px;
+  font-family: "Monaco", monospace;
+  background: rgba(237, 57, 111, 1);
+
+}
+.card1 .bttn1 button:hover{
+
+color: white! important;
+background: rgba(26, 26, 29, 1);
+border : 1px solid rgba(237, 57, 111, 0.5);
+}
+
+.head1 #pend {
+position:relative;
+width:300px;
+top: 25px;
+left: 700px;
+color: white!important;
+ font-size : 40px;
+  font-family: "Monaco", monospace;
+margin:0px;
+}
+
+.head1 #acr {
+position:absolute;
+
+top: 25px;
+left: 1000px;
+color: white!important;
+ font-size : 40px;
+  font-family: "Monaco", monospace;
+margin:0;
+}
+
+.card1 .bttn2 button{
+position:relative;
+  height: 50px;
+  width: 50px;
+
+top: -40px;
+left :90px;
+border: 1px solid white;
+margin:0;
+text-align:center;
+font-size: 30px;
+padding: 0px;
+background: rgba(237, 57, 111, 1);
+color: white!important;
+ font-family: "Monaco", monospace;
+ border-radius: 50%;
+
+}
+
+.card1 .bttn2 button:hover{
+ background: transparent;
+ color:rgba(237, 57, 111, 1)!important;
+
+}
+#master{
+
+height:100%;
+
+}
+#info{
+height: 100%;
+
+position:absolute;
+right:0;
+
+width: 300px;
+height: 100%;
+background: rgba(255, 255, 255,0.8);
+
+
+
+
+}
