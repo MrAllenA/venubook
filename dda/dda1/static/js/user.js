@@ -1,5 +1,6 @@
 $(document).ready(function(){
 var value; var response2;
+
   $.ajax({
             type: "GET",
             url: "/room", //url of site no need to enter full site
@@ -39,6 +40,13 @@ var value; var response2;
                  $("#container").append(div);
                  value++;
                  }
+                 const loader = document.querySelector(".loader .loading--ease-spin");
+                 loader.style.animationPlayState = 'paused';
+                 loader.style.visibility = 'hidden';
+                 
+                 console.log(loader);
+
+
                 }
        });
 $("#master").empty();

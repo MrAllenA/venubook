@@ -290,8 +290,9 @@ font-family: "Monaco", monospace;
   border: solid 0.5rem;
 opacity:0;
   border-color: rgba(237, 57, 111, 1) white;
-  animation: spin 1.2s ease-in-out;
-  animation-iteration-count: 3;
+  animation: spin 1.2s infinite;
+  animation-play-state: running;
+
 
 }
 @keyframes spin {
