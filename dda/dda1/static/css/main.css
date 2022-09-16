@@ -1,5 +1,10 @@
 body {
  background-image: url('/static/images/bg.jpg');
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
  }
 
 .nav1
@@ -7,13 +12,13 @@ body {
  margin-top:0px;
  padding:0;
   width: 170px;
-  height : 800px;
+  height : 770px;
   border : 0px dashed #d7429b;
-  backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
   border-radius: 0px 20px 20px 5px;
-  background-color: rgba(199, 66, 220, 0.28);
-  border: 1px solid rgba(199, 66, 220, 0.51);
+  background-color: rgba(255, 255, 255, 0.28);
+  border-right: 1px solid rgba(255, 255, 255, 0.51);
   display: block;
 /*box-shadow: rgba(219, 70, 159, 0.30) 7px -4px 16px  10px, rgba(58, 153, 242, 0.40) 6px 2px 10px 0px;*/
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);}
@@ -40,9 +45,13 @@ top: 350px;
   border-radius: 0px 0px 0px 5px;
 }
 .nav1 li a:hover {
-  background-color: rgba(213, 93, 232, 0.82);
-  color : white !important;
+     width : 180px;
+  background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(50px);
+  color : rgba(237, 57, 111, 1) !important;
   opacity : 0.5;
+  border-radius: 0px 20px 20px 5px;
 
 
 
@@ -64,7 +73,7 @@ height : 400px;
 background-color:white;
 border-color : 0px solid black;
 border-radius: 40px 8px 40px 8px;
-box-shadow: rgba(219, 70, 159, 0.50) 10px 3px 15px,rgba(58, 153, 242, 0.50) 0px 10px 20px ;
+/* box-shadow: rgba(219, 70, 159, 0.50) 10px 3px 15px,rgba(58, 153, 242, 0.50) 0px 10px 20px ;*/
 }
 .logbox #form1 {
   position: relative;
@@ -98,6 +107,7 @@ left: 35%;
     background-color: white;
     border-radius:50%;
     box-shadow: rgb(102, 153, 255) 0px -10px 30px 0px;
+
 }
 .logbox .circle1 #logimg{
   position:inherit;
@@ -129,4 +139,23 @@ font-family: "Monaco", monospace;
 font-size: 15px;
  left: 485px;
   top: 110px;
+}
+
+@keyframes mov{
+
+from {
+         box-shadow: rgb(243, 153, 255) 0px -10px 30px 0px,rgb(236, 68, 162) 10px 0px 40px 0px;
+         transform: rotate(180deg);
+
+}
+50%{
+   transform: rotate(-180deg);
+}
+to{
+
+           box-shadow: rgb(243, 153, 255) 0px -10px 90px 0px,rgb(236, 68, 162) 20px 30px 80px 0px;
+            transform: rotate(360deg);
+}
+
+
 }

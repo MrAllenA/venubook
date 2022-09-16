@@ -14,7 +14,7 @@
 body{
 margin:auto;
 
-background-image: url('/static/images/adminbg3.jpg');
+background-image: url('/static/images/logbg3.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -181,12 +181,12 @@ width:0px;
 height:0px;
 }
 #container2 {
-width: 900px;
-height: 600px;
-position :relative;
+
+position :absolute;
 top: 130px;
 left: 300px!important;
 margin:0px;
+
 background: rgba(211, 77, 237, 0.60);
 border-radius: 10px 10px 10px 10px;
 box-shadow: 0 4px 35px rgba(0, 0, 0, 0.1);
@@ -195,10 +195,11 @@ backdrop-filter: blur(3.7px);
 
 }
 .records {
-position: relative;
-top: 30px;
-left:140px;
+width: 900px;
+text-align: center;
+vertical-align: middle;
 margin:0;
+padding:0;
 color:white!important;
  font-family: "Monaco", monospace;
  font-size : 60px;

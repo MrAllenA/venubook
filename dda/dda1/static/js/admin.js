@@ -27,7 +27,8 @@ $(document).on('click', 'button', function(e){
 
    let dec = this.id;
    let first = dec.charAt(0);
-   let second = dec.charAt(1);
+   let second = dec.replaceAll('a', '').replaceAll('r', '');
+   alert(second);
    let number;
    for(let i=1;i<=value-1;i++)
    {
