@@ -24,8 +24,8 @@
 
   <li><a href="/home/">Home</a></li>
 
-  <li><a >Contact</a></li>
-  <li><a >News</a></li>
+  <li><a id="contact">Contact</a></li>
+  <li><a id="news">News</a></li>
 
 </ul>
 
@@ -63,6 +63,11 @@
 <div class="reg">
      <a id="reglink" href="/register/" >Register now</a>
 </div>
+</div>
+<div class="countroom" id="maincount">
+    <img class="iconrm" src="{% static 'images/roomicon2.png' %}">
+    <h1 id="rmc">{{curr}}/{{count}}</h1>
+
 </div>
 
  {% load static %}

@@ -6,7 +6,119 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
  }
+ .iconrm{
+ position:absolute;
+ top:7px;
+ left:20px;
+ width:25px;
+ height:25px;
 
+ }
+ .countroom1{
+ display: flex;
+position:absolute;
+top:10px;
+right:20px;
+justify-content:center;
+
+border: .5px solid white;
+width:130px;
+height:40px;
+background:rgba(237, 57, 111, 1);
+border-radius:25px;
+animation: expand .5s ease-out;
+animation-fill-mode: both;
+
+ }
+  .countroom1 #rmc{
+ position:absolute;
+ top:7px;
+ right:20px;
+ font-family: "Monaco", monospace;
+ font-size: 20px;
+ color:white;
+ }
+   .countroom1 #rmcc {
+position:relative;
+ top:80px;
+ right:30px;
+ font-family: "Monaco", monospace;
+ font-size: 50px;
+ color:white;
+ opacity:0;
+  animation: coin .5s ;
+ animation-delay: .5s;
+ animation-fill-mode:both;
+ }
+    .countroom1 p{
+position:absolute;
+ top:180px;
+ right:160px;
+
+ font-family: "Monaco", monospace;
+ font-size: 50px;
+ color:white;
+ opacity:0;
+  animation: coin .5s ;
+ animation-delay: .5s;
+ animation-fill-mode:both;
+ }
+ @keyframes coin{
+ 0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+
+ @keyframes expand{
+    to{
+        width:1200px;
+        height:750px;
+
+    }
+
+
+ }
+ .countroom #rmc {
+ position:absolute;
+ top:7px;
+ right:20px;
+ font-family: "Monaco", monospace;
+ font-size: 20px;
+ color:rgba(237, 57, 111, 1)
+ }
+
+.countroom{
+display: flex;
+position:absolute;
+top:10px;
+right:20px;
+justify-content:center;
+border: 0.5px solid rgba(237, 57, 111, 1);
+
+width:130px;
+height:40px;
+background:white;
+border-radius:25px;
+
+
+
+
+
+
+}
 .nav1
 {list-style-type:none;
  margin-top:0px;
@@ -107,7 +219,7 @@ left: 35%;
     background-color: white;
     border-radius:50%;
     box-shadow: rgb(102, 153, 255) 0px -10px 30px 0px;
-
+     animation: mov 1s infinite alternate;
 }
 .logbox .circle1 #logimg{
   position:inherit;
@@ -145,16 +257,16 @@ font-size: 15px;
 
 from {
          box-shadow: rgb(243, 153, 255) 0px -10px 30px 0px,rgb(236, 68, 162) 10px 0px 40px 0px;
-         transform: rotate(180deg);
+
 
 }
 50%{
-   transform: rotate(-180deg);
+
 }
 to{
 
            box-shadow: rgb(243, 153, 255) 0px -10px 90px 0px,rgb(236, 68, 162) 20px 30px 80px 0px;
-            transform: rotate(360deg);
+
 }
 
 

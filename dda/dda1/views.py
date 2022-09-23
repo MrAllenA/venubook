@@ -1,7 +1,7 @@
 import datetime
 import io
 import json
-
+import xlwt
 from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
@@ -39,7 +39,7 @@ flag = None
 idu = None
 
 
-def reads(request, checkuser1, admin1):   # decision if its admin or user
+def reads(request, checkuser1, admin1):  # decision if its admin or user
     request.session['_old_post'] = request.POST
 
     print(request.session.get('_old_post'))
@@ -51,16 +51,27 @@ def reads(request, checkuser1, admin1):   # decision if its admin or user
         return redirect("user", check=checkuser1)
 
 
-def say_hello(request):   # login page loading
+def say_hello(request):  # login page loading
     form = NameForm()
+    count = database.child('room').shallow().get().val()
+    currcount = 0
+    for i in count:
+        if database.child('room').child(i).child('bookedby').get().val() == "":
+            currcount += 1
+
+    length1 = len(count)
     if request.method == 'POST':
         return get_name(request)
     elif request.method == 'GET':
 
-        return render(request, 'index.html', {'form': form})
+        return render(request, 'index.html', {'form': form,
+                                              'count': length1,
+                                              'curr': currcount})
     else:
 
-        return render(request, 'index.html', {'form': form})
+        return render(request, 'index.html', {'form': form,
+                                              'count': length1,
+                                              'curr': currcount})
 
 
 def book(request):  # book by user
@@ -75,12 +86,14 @@ def book(request):  # book by user
             if database.child('user').child(i).child('name').get().val() == name:
                 database.child('user').child(i).update({'req': 1})
                 database.child('user').child(i).update({'rm': room})
+                database.child('user').child(i).update({'accept': 0})
+                database.child('user').child(i).update({'reject': 0})
 
     return JsonResponse({'res': "request sent"})
 
 
 @csrf_exempt
-def reject(request): # reject by admin
+def reject(request):  # reject by admin
     print(request.GET)
     if request.method == "GET":
         name = request.GET.get('name')
@@ -112,6 +125,9 @@ def accept(request):  # accept by admin
                 if database.child('room').child(room1).child('bookedby').get().val() != "":
                     return reject(request)
                 else:
+                    current_datetime = datetime.datetime.now()
+                    json_str = json.dumps({'created_at': current_datetime}, default=str)
+                    database.child("room").child(room1).update({'datime': json_str})
                     database.child("room").child(room1).update({'bookedby': name})
                     break
 
@@ -130,7 +146,10 @@ def rq1(request):  # admin side view req from user
 
             if req > 0:
                 user = database.child('user').child(i).child('name').get().val()
-                rqdict = {"name": user}
+                rm = database.child('user').child(i).child('rm').get().val()
+
+                rqdict = {"name": user,
+                          "rm": rm}
                 list1.append(rqdict)
 
     return JsonResponse({"rqs": list1})
@@ -154,15 +173,39 @@ def rq1(request):  # admin side view req from user
     return FileResponse(buffer, as_attachment=True, filename='hello.pdf')"""
 
 
+def export1(request):
+    response = HttpResponse(content_type='application/ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="booking.xls"'
+    wb = xlwt.Workbook(encoding='utf-8')
+    row_num = 0
+    ws = wb.add_sheet('booking data')  # this will make a sheet named Users Data
+    columns = ['Time', 'Roomno', 'User']
+    for col_num in range(len(columns)):
+        ws.write(row_num, col_num, columns[col_num])
+    rooms = database.child('room').shallow().get().val()
+    for i in rooms:
+
+        if database.child('room').child(i).child('bookedby').get().val() != "":
+            row_num += 1
+            tim = database.child('room').child(i).child('datime').get().val()
+            us = database.child('room').child(i).child('bookedby').get().val()
+            ws.write(row_num, 0, tim)
+            ws.write(row_num, 1, i)
+            ws.write(row_num, 2, us)
+    wb.save(response)
+    return response
+
+
 def room(request):  # returning list of rooms to user side
     rooms = database.child('room').shallow().get().val()
     listroom = []
     for i in rooms:
-        res= database.child('room').child(i).child('res').get().val()
-        rodict = {"name": i,
-                  "resource": res,
-                  }
-        listroom.append(rodict)
+        res = database.child('room').child(i).child('res').get().val()
+        if database.child('room').child(i).child('bookedby').get().val() == "":
+            rodict = {"name": i,
+                      "resource": res,
+                      }
+            listroom.append(rodict)
     return JsonResponse({"rooms": listroom})
 
 

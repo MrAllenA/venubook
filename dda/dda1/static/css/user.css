@@ -423,14 +423,25 @@ to{
 }
 
 .cardres {
-  width: 300px;
+display: flex;
+
+justify-content: center;
+  width: inherit;
   position: absolute;
-  border: 1px solid black;
+margin:0;
+
+
+  border: 0px solid black;
  white-space: pre-wrap;
 
 }
 
 .cardres p{
-  color: black;
+  background: rgba(237, 57, 111, 1);
+  text-shadow: 2px 2px 2px rgba(255,255,255,0.2);
+    -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+  font-size:30px;
+ font-family: "Monaco", monospace;
 
 }

@@ -15,5 +15,5 @@ urlpatterns = [
     path('book/', views.book),
     path('recac/', views.get_arecord),
     path('insro/', views.insro),
-    #  path('exp/', views.export1)
+    path('exp/', views.export1)
 ]

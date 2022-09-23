@@ -43,7 +43,9 @@ var value; var response2;
                  const loader = document.querySelector(".loader .loading--ease-spin");
                  loader.style.animationPlayState = 'paused';
                  loader.style.visibility = 'hidden';
-                 
+
+
+
                  console.log(loader);
 
 
@@ -105,6 +107,9 @@ $(document).on('click', '.bttn1 button', function(e){
    let room = $("#"+"r"+bnc).text();
    let user = $("#uuserid").text();
        user = user.split("welcome|").pop();
+   const loader = document.querySelector(".loader .loading--ease-spin");
+                 loader.style.animationPlayState = 'running';
+                 loader.style.visibility = 'visible';
 
 
     $.ajax({
@@ -120,11 +125,14 @@ $(document).on('click', '.bttn1 button', function(e){
 
                       },
                 success: function(response){
-                   alert(response.res);
-                   $("#pend").empty();
 
+
+                   $("#pend").empty();
+                    loader.style.animationPlayState = 'paused';
+                     loader.style.visibility = 'hidden';
                    var temp = "Pending : 1";
                    $("#pend").append(temp);
+
                 }
 
 
